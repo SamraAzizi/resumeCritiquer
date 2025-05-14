@@ -36,4 +36,14 @@ def extract_text_from_file(uploaded_file):
 
 if analyze and uploaded_file:
     try:
-        file_content 
+        file_content = extract_text_from_file(uploaded_file)
+        if not file_content.strip():
+            st.error("file does not have ant content...")
+            st.stop()
+     prompt = f"""Please analyze this resume and provide constructive feedback,
+     Focus on the following aspects:
+     1. Content Clarity and impact
+     2. Skills presentation
+     3. Experience descriptions
+     4. Specific improvement for
+        
