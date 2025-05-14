@@ -23,11 +23,16 @@ analyze = st.button("Analyze Resume")
 
 def extract_text_from_pdf(pdf_file):
     pdf_reader = PyPDF2.PdfReader(pdf_file)
+    text = ""
+    for page in pdf_reader.pages:
+        text += page.extract_text() + "\n"
+    return text   
+
 
 def extract_text_from_file(uploaded_file):
     if uploaded_file.type == "application/pdf":
-        return
-
+        return extract_text_from_pdf(io.BytesIO(uploaded_file.read()))
+    return uploaded_file.read().decode("utf-8")
 
 if analyze and uploaded_file:
     try:
