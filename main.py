@@ -16,3 +16,14 @@ st.markdown("Upload your resume and get AI-powered feedbac tailored to your need
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 uploaded_file = st.file_uploader("Upload Your resume (PDF or TXT)", type=["pdf", "txt"])
+
+job_role = st.text_input("Enter the job role you are targetting (optional)")
+
+analyze = st.button("Analyze Resume")
+
+def extract_text_from_file(uploaded_file):
+    
+
+if analyze and uploaded_file:
+    try:
+        file_content 
