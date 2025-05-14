@@ -21,8 +21,13 @@ job_role = st.text_input("Enter the job role you are targetting (optional)")
 
 analyze = st.button("Analyze Resume")
 
+def extract_text_from_pdf(pdf_file):
+    pdf_reader = PyPDF2.PdfReader(pdf_file)
+
 def extract_text_from_file(uploaded_file):
-    
+    if uploaded_file.type == "application/pdf":
+        return
+
 
 if analyze and uploaded_file:
     try:
