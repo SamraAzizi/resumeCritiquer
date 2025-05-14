@@ -45,5 +45,14 @@ if analyze and uploaded_file:
      1. Content Clarity and impact
      2. Skills presentation
      3. Experience descriptions
-     4. Specific improvement for
+     4. Specific improvement for {job_role if job_role else 'general job application'}
+
+    Resume content:
+    {file_content}
+
+    Please provide you analyze in a clear, structured format with specific recommendations."""
+
+    
+
+
         
