@@ -14,3 +14,14 @@ The **AI Resume Critiquer** is a web application built using Streamlit that allo
 ## Requirements
 
 To run this application, you need the following:
+- Python 3.7 or higher
+- Streamlit
+- PyPDF2
+- OpenAI Python client
+- python-dotenv
+
+You can install the required packages using pip:
+
+```bash
+pip install streamlit PyPDF2 openai python-dotenv
+```
