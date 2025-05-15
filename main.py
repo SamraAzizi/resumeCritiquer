@@ -40,19 +40,26 @@ if analyze and uploaded_file:
         if not file_content.strip():
             st.error("file does not have ant content...")
             st.stop()
-     prompt = f"""Please analyze this resume and provide constructive feedback,
-     Focus on the following aspects:
-     1. Content Clarity and impact
-     2. Skills presentation
-     3. Experience descriptions
-     4. Specific improvement for {job_role if job_role else 'general job application'}
+        prompt = f"""Please analyze this resume and provide constructive feedback,
+        Focus on the following aspects:
+        1. Content Clarity and impact
+        2. Skills presentation
+        3. Experience descriptions
+        4. Specific improvement for {job_role if job_role else 'general job application'}
 
-    Resume content:
-    {file_content}
+        Resume content:
+        {file_content}
 
-    Please provide you analyze in a clear, structured format with specific recommendations."""
+        Please provide you analyze in a clear, structured format with specific recommendations."""
 
-    
+        client =OpenAI(api_key=OPENAI_API_KEY)
+        response = client.chat.completions.create(
+            model="gpt-4o-mini",
+            messages=[
+                {"role": "system", "content":"You are an expert resume reviewer with year of experience in HR and recruitment."}
+            ]
+
+        )
 
 
         
