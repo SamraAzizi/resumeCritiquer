@@ -56,10 +56,20 @@ if analyze and uploaded_file:
         response = client.chat.completions.create(
             model="gpt-4o-mini",
             messages=[
-                {"role": "system", "content":"You are an expert resume reviewer with year of experience in HR and recruitment."}
-            ]
+                {"role": "system", "content":"You are an expert resume reviewer with year of experience in HR and recruitment."},
+                {"role":  "user", "content":prompt}
+            ],
+            temperature=0.7,
+            max_tokens=1000
 
         )
+        st.markdown("### Analysis Results")
+        st.markdown(response.choices[0].message.content)
+
+    except Exception as e:
+        st.error(f"An error occured: {str(e)}")
+
+
 
 
         
