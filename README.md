@@ -44,3 +44,15 @@ OPENAI_API_KEY=your_openai_api_key_here
 streamlit run main.py
 ```
 
+## Usage
+1. Open the application in your web browser (the terminal will provide a local URL).
+2. Upload your resume in PDF or TXT format using the file uploader.
+3. Optionally, enter the job role you are targeting.
+4. Click the "Analyze Resume" button to receive feedback.
+5. Review the analysis results displayed on the page.
+
+## Code Explanation
+- File Upload: The application allows users to upload their resumes and extracts text from both PDF and TXT files.
+- Text Extraction: The extract_text_from_pdf function handles PDF files, while the extract_text_from_file function manages TXT files.
+- AI Analysis: Upon clicking the "Analyze Resume" button, the application constructs a prompt for the OpenAI API, requesting feedback on the resume.
+- Error Handling: The application includes error handling to manage issues such as empty files or API errors.
